@@ -1,0 +1,330 @@
+1:
+  long: Antimage
+  short: antimage
+2:
+  long: Axe
+  short: axe
+3:
+  long: Bane
+  short: bane
+4:
+  long: Bloodseeker
+  short: bloodseeker
+5:
+  long: Crystal Maiden
+  short: crystal_maiden
+6:
+  long: Drow Ranger
+  short: drow_ranger
+7:
+  long: Earthshaker
+  short: earthshaker
+8:
+  long: Juggernaut
+  short: juggernaut
+9:
+  long: Mirana
+  short: mirana
+11:
+  long: Shadow Fiend
+  short: shadow_fiend
+10:
+  long: Morphling
+  short: morphling
+12:
+  long: Phantom Lancer
+  short: phantom_lancer
+13:
+  long: Puck
+  short: puck
+14:
+  long: Pudge
+  short: pudge
+15:
+  long: Razor
+  short: razor
+16:
+  long: Sand King
+  short: sand_king
+17:
+  long: Storm Spirit
+  short: storm_spirit
+18:
+  long: Sven
+  short: sven
+19:
+  long: Tiny
+  short: tiny
+20:
+  long: Vengeful Spirit
+  short: vengeful_spirit
+21:
+  long: Windrunner
+  short: windrunner
+22:
+  long: Zeus
+  short: zeus
+23:
+  long: Kunkka
+  short: kunkka
+25:
+  long: Lina
+  short: lina
+31:
+  long: Lich
+  short: lich
+26:
+  long: Lion
+  short: lion
+27:
+  long: Shadow Shaman
+  short: shadow_shaman
+28:
+  long: Slardar
+  short: slardar
+29:
+  long: Tidehunter
+  short: tidehunter
+30:
+  long: Witch Doctor
+  short: witch_doctor
+32:
+  long: Riki
+  short: riki
+33:
+  long: Enigma
+  short: enigma
+34:
+  long: Tinker
+  short: tinker
+35:
+  long: Sniper
+  short: sniper
+36:
+  long: Necrophos
+  short: necrophos
+37:
+  long: Warlock
+  short: warlock
+38:
+  long: Beastmaster
+  short: beastmaster
+39:
+  long: Queen of Pain
+  short: queen_of_pain
+40:
+  long: Venomancer
+  short: venomancer
+41:
+  long: Faceless Void
+  short: faceless_void
+42:
+  long: Skeleton King
+  short: skeleton_king
+43:
+  long: Death Prophet
+  short: death_prophet
+44:
+  long: Phantom Assassin
+  short: phantom_assassin
+45:
+  long: Pugna
+  short: pugna
+46:
+  long: Templar Assassin
+  short: templar_assassin
+47:
+  long: Viper
+  short: viper
+48:
+  long: Luna
+  short: luna
+49:
+  long: Dragon Knight
+  short: dragon_knight
+50:
+  long: Dazzle
+  short: dazzle
+51:
+  long: Clockwerk
+  short: clockwerk
+52:
+  long: Leshrac
+  short: leshrac
+53:
+  long: Nature's Prophet
+  short: natures_prophet
+54:
+  long: Life Stealer
+  short: life_stealer
+55:
+  long: Dark Seer
+  short: dark_seer
+56:
+  long: Clinkz
+  short: clinkz
+57:
+  long: Omniknight
+  short: omniknight
+58:
+  long: Enchantress
+  short: enchantress
+59:
+  long: Huskar
+  short: huskar
+60:
+  long: Night Stalker
+  short: night_stalker
+61:
+  long: Broodmother
+  short: broodmother
+62:
+  long: Bounty Hunter
+  short: bounty_hunter
+63:
+  long: Weaver
+  short: weaver
+64:
+  long: Jakiro
+  short: jakiro
+65:
+  long: Batrider
+  short: batrider
+66:
+  long: Chen
+  short: chen
+67:
+  long: Spectre
+  short: spectre
+69:
+  long: Doom Bringer
+  short: doom_bringer
+68:
+  long: Ancient Apparition
+  short: ancient_apparition
+70:
+  long: Ursa
+  short: ursa
+71:
+  long: Spirit Breaker
+  short: spirit_breaker
+72:
+  long: Gyrocopter
+  short: gyrocopter
+73:
+  long: Alchemist
+  short: alchemist
+74:
+  long: Invoker
+  short: invoker
+75:
+  long: Silencer
+  short: silencer
+76:
+  long: Outworld Devourer
+  short: outworld_devourer
+77:
+  long: Lycan
+  short: lycan
+78:
+  long: Brewmaster
+  short: brewmaster
+79:
+  long: Shadow Demon
+  short: shadow_demon
+80:
+  long: Lone Druid
+  short: lone_druid
+81:
+  long: Chaos Knight
+  short: chaos_knight
+82:
+  long: Meepo
+  short: meepo
+83:
+  long: Treant Protector
+  short: treant
+84:
+  long: Ogre Magi
+  short: ogre_magi
+85:
+  long: Undying
+  short: undying
+86:
+  long: Rubick
+  short: rubick
+87:
+  long: Disruptor
+  short: disruptor
+88:
+  long: Nyx Assassin
+  short: nyx_assassin
+89:
+  long: Naga Siren
+  short: naga_siren
+90:
+  long: Keeper Of The Light
+  short: keeper_of_the_light
+91:
+  long: Wisp
+  short: wisp
+92:
+  long: Visage
+  short: visage
+93:
+  long: Slark
+  short: slark
+94:
+  long: Medusa
+  short: medusa
+95:
+  long: Troll Warlord
+  short: troll_warlord
+96:
+  long: Centaur
+  short: centaur
+97:
+  long: Magnataur
+  short: magnataur
+98:
+  long: Timbersaw
+  short: timbersaw
+99:
+  long: Bristleback
+  short: bristleback
+100:
+  long: Tusk
+  short: tusk
+101:
+  long: Skywrath Mage
+  short: skywrath_mage
+102:
+  long: Abaddon
+  short: abaddon
+103:
+  long: Elder Titan
+  short: elder_titan
+104:
+  long: Legion Commander
+  short: legion_commander
+105:
+  long: Techies
+  short: techies
+106:
+  long: Ember Spirit
+  short: ember_spirit
+107:
+  long: Earth Spirit
+  short: earth_spirit
+109:
+  long: Terrorblade
+  short: terrorblade
+110:
+  long: Phoenix
+  short: phoenix
+111:
+  long: Oracle
+  short: oracle
+112:
+  long: Winter Wyvern
+  short: winter_wyvern

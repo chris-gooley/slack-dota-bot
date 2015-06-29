@@ -1,0 +1,4 @@
+# To get the token, create an Incoming Webhook Integration in your slack admin. C
+# Copy everything after "services/" in the URL that it gives you, it should containt 2 "/"s:
+# eg: https://hooks.slack.com/services/{THIS IS YOUR TOKEN}
+token: YOUR_SLACK_TOKEN_HERE

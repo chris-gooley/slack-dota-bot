@@ -1,0 +1,8 @@
+config/slack.yml
+config/steam.yml
+config/players.yml
+
+.DS_Store
+
+last_seen_match_id
+.ruby-gemset
