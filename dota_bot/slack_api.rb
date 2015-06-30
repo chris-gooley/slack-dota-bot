@@ -19,7 +19,7 @@ module DotaBot
 
   private
     def perform_request(payload={})
-      uri     = URI.parse "https://hooks.slack.com/services/token"
+      uri     = URI.parse "https://hooks.slack.com/services/#{token}"
       request = Net::HTTP::Get.new(uri.path)
       request.set_form_data({ payload: payload.to_json })
 
