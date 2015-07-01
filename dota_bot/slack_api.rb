@@ -4,16 +4,17 @@ module DotaBot
 
     include Singleton
 
-    attr_accessor :account, :token
+    attr_accessor :account, :token, :channel
 
 
     def initialize
       config = YAML.load_file('config/slack.yml')
       self.token   = config['token']
+      self.channel = config['channel']
     end
 
     def post(args={})
-      perform_request(args)
+      perform_request(args.merge({ channel: channel }))
     end
 
 

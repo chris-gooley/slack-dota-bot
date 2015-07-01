@@ -3,10 +3,10 @@
 # steam_id: Dota account id from dotabuff, go to the user profile on dotabuff and copy the id from the url ie: http://www.dotabuff.com/players/{steam_id}
 # show_own: Whether to show individual games for this player under the group games.
 -
-  name: @slack_username
+  name: slack_username
   steam_id: 1234567890
   show_own: true
 -
-  name: @slack_username_2
+  name: slack_username_2
   steam_id: 0987654321
   show_own: false

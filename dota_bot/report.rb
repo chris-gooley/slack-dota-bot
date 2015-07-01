@@ -17,7 +17,11 @@ module DotaBot
       threads.each(&:join)
 
       DotaBot::Player.all.map do |player|
-        player.matches.select!{ |m| m.match_id > last_seen_match_id }
+        if last_seen_match_id != 0
+          player.matches.select!{ |m| m.match_id > last_seen_match_id }
+        else
+          player.matches.slice!(5..-1)
+        end
       end
 
       matches = DotaBot::Player.all.map(&:matches).flatten.sort_by(&:start_time)
@@ -72,7 +76,6 @@ module DotaBot
       }]
 
       DotaBot::SlackAPI.instance.post({
-        channel:     "#dota",
         username:    "dotabot",
         text:        "Last Night's Dota Shennanigans (#{Date.yesterday.strftime('%e %B %Y')})",
         icon_emoji:  ":dota_icon:",
