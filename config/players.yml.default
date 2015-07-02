@@ -1,3 +1,4 @@
+# Rename to players.yml
 # All Players should have made their DOTA account public.
 # name: Slack username
 # steam_id: Dota account id from dotabuff, go to the user profile on dotabuff and copy the id from the url ie: http://www.dotabuff.com/players/{steam_id}
