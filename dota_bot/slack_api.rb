@@ -9,8 +9,12 @@ module DotaBot
 
     def initialize
       config = YAML.load_file('config/slack.yml')
-      self.token   = config['token']
-      self.channel = config['channel']
+      self.token   = config.fetch('token')
+      self.channel = config.fetch('channel')
+    rescue Errno::ENOENT => exception
+      raise "Could not locate config/slack.yml config file."
+    rescue KeyError => exception
+      raise "#{exception.message} in slack.yml"
     end
 
     def post(args={})

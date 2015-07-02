@@ -9,7 +9,11 @@ module DotaBot
 
     def initialize
       config = YAML.load_file('config/steam.yml')
-      self.key = config['key']
+      self.key = config.fetch('key')
+    rescue Errno::ENOENT => exception
+      raise "Could not locate config/steam.yml config file."
+    rescue KeyError => exception
+      raise "#{exception.message} in steam.yml"
     end
 
     def match_history(account_id, args={})

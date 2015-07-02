@@ -38,8 +38,12 @@ module DotaBot
   private
     def self.load_into_data_store
       YAML.load_file('config/players.yml').each do |data|
-        direct_data_store << new({ id: data['steam_id'], name: data['name'], show_own: data['show_own'] })
+        direct_data_store << new({ id: data.fetch('steam_id'), name: data.fetch('name'), show_own: data['show_own'] })
       end
+    rescue Errno::ENOENT => exception
+      raise "Could not locate config/players.yml config file."
+    rescue KeyError => exception
+      raise "#{exception.message} in players.yml"
     end
   end
 end
