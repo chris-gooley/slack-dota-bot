@@ -62,6 +62,14 @@ module DotaBot
       players.select(&:dire?)
     end
 
+    def radiant_kills
+      radiant_players.map(&:kills).reduce(:+)
+    end
+
+    def dire_kills
+      dire_players.map(&:kills).reduce(:+)
+    end
+
     def team_we_played_on
       teams_we_played_on = players.map { |p| p.team if p.player }.compact.uniq
 
@@ -96,14 +104,14 @@ module DotaBot
       [
         {
           title: "#{long_game_mode} @ #{formatted_start_time}",
-          value: "#{known_players_string} played in this game (http://dotabuff.com/matches/#{match_id})",
+          value: "#{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <http://yasp.co/matches/#{match_id}|Yasp>)",
           short: false
         },
         team_report('radiant'),
         team_report('dire'),
         {
           title: "Winner",
-          value: "#{winning_team == 'radiant' ? ':deciduous_tree:' : ':volcano:'} #{winning_team.upcase} VICTORY in #{formatted_duration}\n\n:nbsp:",
+          value: "#{winning_team == 'radiant' ? ':deciduous_tree:' : ':volcano:'} #{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}\n\n:nbsp:",
           short: false
         }
       ]
