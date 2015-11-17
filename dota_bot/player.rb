@@ -24,7 +24,7 @@ module DotaBot
     end
 
     def to_report
-      match_summary = own_matches.sort_by(&:start_time).reverse.map do |match|
+      match_summary = own_matches.sort_by{|match| match.start_time }.map do |match|
         plyr = match.players.select{|p| p.player.try(:id) == id }.first
 
         team = match.radiant_players.include?(plyr) ? 'radiant' : 'dire'
