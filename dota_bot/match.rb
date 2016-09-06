@@ -104,7 +104,7 @@ module DotaBot
       [
         {
           title: "#{long_game_mode} @ #{formatted_start_time}",
-          value: "#{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <http://yasp.co/matches/#{match_id}|Yasp>)",
+          value: "#{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)",
           short: false
         },
         team_report('radiant'),
