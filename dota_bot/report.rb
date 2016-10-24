@@ -10,13 +10,9 @@ module DotaBot
       print "  [REPORT] Preparing report from match id: #{last_seen_match_id}\n"
 
       # Collate matches from all players where two or more known players participated
-      threads = DotaBot::Player.all.map do |player|
-        Thread.new { player.matches }
-      end
+      DotaBot::Player.all.each { |p| p.matches }
 
-      threads.each(&:join)
-
-      DotaBot::Player.all.map do |player|
+      DotaBot::Player.all.each do |player|
         if last_seen_match_id != 0
           player.matches.select!{ |m| m.match_id > last_seen_match_id }
         else
@@ -29,11 +25,7 @@ module DotaBot
       matches.uniq!(&:match_id)
 
       # Load additional details for these matches we'll report on
-      threads = matches.map do |match|
-        Thread.new { match.load_match_details! }
-      end
-
-      threads.each(&:join)
+      matches.each { |m| m.load_match_details! }
 
       return if matches.empty?
 

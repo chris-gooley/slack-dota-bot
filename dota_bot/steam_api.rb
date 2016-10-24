@@ -32,7 +32,20 @@ module DotaBot
       request_url = "#{url}?#{URI.encode_www_form(args)}"
 
       print "  [STEAM]  #{request_url}\n"
+      Kernel.sleep(1)
       JSON.parse(open(request_url).read)['result']
+
+
+    rescue OpenURI::HTTPError => ex
+      error_code = ex.io.status[0]
+
+      if error_code == '429'
+        # Sleep and retry
+        Kernel.sleep(5)
+        perform_request(url, args)
+      else
+        raise
+      end
     end
   end
 end
