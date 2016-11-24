@@ -29,7 +29,7 @@ module DotaBot
 
         team = match.radiant_players.include?(plyr) ? 'radiant' : 'dire'
 
-        "#{plyr.hero_emoji} (#{plyr.kda} - #{match.short_game_mode} - <http://dotabuff.com/matches/#{match.match_id}|#{team == match.winning_team ? 'win' : 'loss'}>)"
+        "#{plyr.hero_emoji} (#{plyr.kda} - #{match.short_game_mode} - <https://www.opendota.com/matches/#{match.match_id}|#{team == match.winning_team ? 'win' : 'loss'}>)"
       end.join(', ')
 
       "@#{name} played #{own_matches.count} #{own_matches.count != 1 ? 'games' : 'game'}: #{match_summary}"
