@@ -1,0 +1,15 @@
+# Rename to services.yml
+# You can send reports to one or more services. The currently supported services are Slack and Discord
+# type: 'slack' or 'discord'
+# token: 'API Token for the service'
+# channel: 'slack/discord channel name'
+
+# Slack Token How To
+# To get the token, create an Incoming Webhook Integration in your slack admin.
+# Copy everything after "services/" in the URL that it gives you, it should containt 2 "/"s:
+# eg: https://hooks.slack.com/services/{THIS IS YOUR TOKEN}
+
+# Discord Token How To
+# TODO
+token: YOUR_SLACK_TOKEN
+channel: dota

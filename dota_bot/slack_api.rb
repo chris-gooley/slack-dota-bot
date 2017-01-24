@@ -1,6 +1,5 @@
 module DotaBot
   class SlackAPI
-    BASE_URI = 'http://api.steampowered.com/IDOTA2Match_570'
 
     include Singleton
 

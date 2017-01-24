@@ -21,7 +21,6 @@ module DotaBot
       end
 
       matches = DotaBot::Player.all.map(&:matches).flatten.sort_by(&:start_time)
-
       matches.uniq!(&:match_id)
 
       # Load additional details for these matches we'll report on
@@ -51,32 +50,17 @@ module DotaBot
 
       last_match_id = matches.last.match_id
 
+
       matches.select!(&:more_than_one_known_player?)
 
-      matches.each do |m|
-        if m.team_we_played_on == m.winning_team
-          num_victories += 1
-        elsif m.team_we_played_on != 'mixed'
-          num_losses += 1
-        end
+      DotaBot::Service.all.each do |service|
+        service.post({
+          matches: matches,
+          players_matches: players_matches
+        })
       end
 
-      summary_line = [{
-        title: 'Summary',
-        value: "#{num_victories}/#{num_victories+num_losses} matches won",
-        short: false
-      }]
 
-      DotaBot::SlackAPI.instance.post({
-        username:    "dotabot",
-        text:        "Last Night's Dota Shennanigans (#{Date.yesterday.strftime('%e %B %Y')})",
-        icon_emoji:  ":dota_icon:",
-        link_names:  1,
-        attachments: [
-          fields: matches.flat_map(&:to_report) + players_matches + summary_line,
-          mrkdwn_in: [ 'fields' ]
-        ]
-      })
 
       print "  [REPORT] Recording seen up until match id: #{last_match_id}\n"
 

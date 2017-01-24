@@ -1,7 +1,0 @@
-# Rename to slack.yml
-# To get the token, create an Incoming Webhook Integration in your slack admin.
-# Copy everything after "services/" in the URL that it gives you, it should containt 2 "/"s:
-# eg: https://hooks.slack.com/services/{THIS IS YOUR TOKEN}
-# Channel: which channel you want dota bot to post to
-token: YOUR_SLACK_TOKEN
-channel: dota

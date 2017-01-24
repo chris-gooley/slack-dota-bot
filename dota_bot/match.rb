@@ -100,21 +100,43 @@ module DotaBot
       GAME_MODES[game_mode][:short]
     end
 
-    def to_report
+    def to_slack_report
       [
         {
           title: "#{long_game_mode} @ #{formatted_start_time}",
           value: "#{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)",
           short: false
         },
-        team_report('radiant'),
-        team_report('dire'),
         {
+          title: 'Radiant',
+          value: team_report('radiant'),
+          short: true
+        },{
+          title: 'Dire',
+          value: team_report('dire'),
+          short: true
+        },{
           title: "Winner",
           value: "#{winning_team == 'radiant' ? ':deciduous_tree:' : ':volcano:'} #{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}\n\n:nbsp:",
           short: false
         }
       ]
+    end
+
+    def to_discord_report
+      <<-report
+        **#{long_game_mode} @ #{formatted_start_time}**
+        #{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)
+
+        **Radiant**
+        #{team_report('radiant')}
+
+        **Dire**
+        #{team_report('dire')}
+
+        **Winner**
+        #{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}
+      report
     end
 
     def team_report(team)
@@ -127,11 +149,7 @@ module DotaBot
         report_string << "\n" + player.to_report
       end
 
-      {
-        title: team.titleize,
-        value: report_string,
-        short: true
-      }
+      report_string
     end
   end
 end
