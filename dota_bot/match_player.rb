@@ -37,6 +37,10 @@ module DotaBot
       "#{player_name} #{hero_emoji} lvl #{level} (#{kda})"
     end
 
+    def hero_name
+      hero.name
+    end
+
     def hero_emoji
       hero.emoji
     rescue

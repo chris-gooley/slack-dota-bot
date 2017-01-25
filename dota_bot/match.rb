@@ -100,6 +100,7 @@ module DotaBot
       GAME_MODES[game_mode][:short]
     end
 
+    # Really gotta redo this reporting stuff here, abstract it out.
     def to_slack_report
       [
         {
@@ -109,11 +110,11 @@ module DotaBot
         },
         {
           title: 'Radiant',
-          value: team_report('radiant'),
+          value: slack_team_report('radiant'),
           short: true
         },{
           title: 'Dire',
-          value: team_report('dire'),
+          value: slack_team_report('dire'),
           short: true
         },{
           title: "Winner",
@@ -125,21 +126,34 @@ module DotaBot
 
     def to_discord_report
       <<-report
-        **#{long_game_mode} @ #{formatted_start_time}**
-        #{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)
+**#{long_game_mode} @ #{formatted_start_time}**
+#{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)
 
-        **Radiant**
-        #{team_report('radiant')}
+**Radiant**
+#{discord_team_report('radiant')}
 
-        **Dire**
-        #{team_report('dire')}
+**Dire**
+#{discord_team_report('dire')}
 
-        **Winner**
-        #{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}
+**Winner**
+#{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}
       report
     end
 
-    def team_report(team)
+    def discord_team_report(team)
+      players = (team == 'radiant' ? radiant_players : dire_players)
+
+      report_string = ''
+      report_string << players.map(&:hero_name).join(' ')
+
+      players.each do |player|
+        report_string << "\n" + player.to_report
+      end
+
+      report_string
+    end
+
+    def slack_team_report(team)
       players = (team == 'radiant' ? radiant_players : dire_players)
 
       report_string = ''

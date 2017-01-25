@@ -1,6 +1,6 @@
 # Rename to services.yml
 # You can send reports to one or more services. The currently supported services are Slack and Discord
-# type: 'slack' or 'discord'
+# service: 'slack' or 'discord'
 # token: 'API Token for the service'
 # channel: 'slack/discord channel name'
 
