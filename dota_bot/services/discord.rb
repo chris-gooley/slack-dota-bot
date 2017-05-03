@@ -15,19 +15,17 @@ module DotaBot
         end
       end
 
-      output = <<-output
-```Markdown
+      output = "```Markdown
 __**Last Night's Dota Shennanigans (#{Date.yesterday.strftime('%e %B %Y')})**__
 
-#{matches.flat_map(&:to_discord_report)}
+#{matches.flat_map(&:to_discord_report).join('\n')}
 
 
 **Summary**
 #{num_victories}/#{num_victories+num_losses} matches won
-```
-      output
+```"
 
-      perform_request(raw(output))
+      perform_request(output)
     end
 
   private

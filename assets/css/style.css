@@ -1,0 +1,37 @@
+html{
+  background-color: #36393E;
+  color: white;
+  font-family: Helvetica, Ariel, sans-serif;
+  font-size: 1.5em;
+}
+
+
+img{
+  width: 30px;
+  position: relative;
+  top: 5px;
+}
+
+h1,h2,h3,h4,h5{
+  margin: 15px 0 5px;
+}
+
+
+
+.columns {
+  clear: both;
+
+}
+.column{
+  width: 50%;
+  float: left;
+}
+
+
+.stack-matches{
+  margin: 15px 0 40px;
+}
+
+.stack-match{
+  margin-bottom: 40px;
+}

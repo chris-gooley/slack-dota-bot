@@ -125,8 +125,7 @@ module DotaBot
     end
 
     def to_discord_report
-      <<-report
-**#{long_game_mode} @ #{formatted_start_time}**
+      return "**#{long_game_mode} @ #{formatted_start_time}**
 #{known_players_string} played in this game (<http://dotabuff.com/matches/#{match_id}|DotaBuff>, <https://www.opendota.com/matches/#{match_id}|OpenDota>)
 
 **Radiant**
@@ -136,8 +135,7 @@ module DotaBot
 #{discord_team_report('dire')}
 
 **Winner**
-#{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}
-      report
+#{winning_team.upcase} VICTORY in #{formatted_duration}. Kills: #{radiant_kills} vs #{dire_kills}"
     end
 
     def discord_team_report(team)
